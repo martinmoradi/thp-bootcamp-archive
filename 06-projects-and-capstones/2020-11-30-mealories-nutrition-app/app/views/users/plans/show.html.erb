@@ -1,0 +1,51 @@
+<%= render 'users/users/welcome'%>
+<div class="h-screen flex overflow-auto min-w-full">
+  <%= render 'users/users/sidebar' %>
+
+  <div class="flex flex-col mx-4 relative w-full">
+    
+    <div class="mt-8"></div>
+    <h1 class="text-primary-800 text-3xl ml-1s font-semibold mb-2 "><%= current_user.first_name %>, </h1>
+
+    <h2 class="text-base text-gray-500 "> Retrouve les ingrédients de ton programme actuel ici </h2>
+    <div class="ml-5 mt-5">
+      <% @plan.days.each.with_index do |day, idx| %>
+      <details class="my-5">
+        <summary class="mt-5 text-xl text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none">
+          Jour n°<%= idx + 1 %>
+        </summary>
+        <p class="text-gray-600 text-base my-3">Ton déjeuner :
+          <span class="tracking-wide text-lg  text-primary-600">
+            <%= link_to recipe_path(day.lunch) do %><%= day.lunch.title %>
+            <span>
+        </p>
+        <% end %>
+        <ul class="ml-3">
+          <% day.lunch.ingredients_list_formatted.each do |ingredient| %>
+          <li class="text-sm text-gray-500 mb-1 list-inside"><%= ingredient %></li>
+          <% end %>
+        </ul>
+
+        <p class="text-gray-600 text-base my-3">Ton dîner :
+          <span class="tracking-wide text-lg  text-primary-600">
+            <%= link_to recipe_path(day.dinner) do %><%= day.dinner.title %>
+            <span>
+        </p>
+        <% end %>
+        <ul class="ml-3">
+          <% day.dinner.ingredients_list_formatted.each do |ingredient| %>
+          <li class="text-sm text-gray-500 mb-1"><%= ingredient %></li>
+          <% end %>
+        </ul>
+      </details>
+      <hr>
+      <% end %>
+    </div>
+    <%= button_to "Envoyez-moi cette liste par mail", shopping_list_path, method: :get, class: "submit mb-8"%>
+  </div>
+</div>
+
+
+
+
+</div>

@@ -1,0 +1,35 @@
+<p>Meow 😸 <%= @order.user.email %>!</p></br>
+
+<p>Thank you for ordering this beautiful cat picture <span style="color: red;">&#9829;</span> with us.</p>
+<p>Here is your order below:</p></br>
+<hr>
+<% @order.cart.products.each do |product| %>
+<h2><%= product.title %> :</h2>
+<br>
+<img src="<%= product.img_url %>">
+<br>
+<% end %>
+<hr>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+    <td style="text-align: center;">
+      <h3><strong>Order total : <%= @order.cart.sub_total %> €.</strong></h3>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">
+      <p>You can always expect the best cat pictures from us.</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">
+      <p>KittyPics : made with <span style="color: red;">&#9829;</span> by les Perruches</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">
+      <p> PS : We don't do refunds 😸 </p>
+    </td>
+  </tr>
+</table>

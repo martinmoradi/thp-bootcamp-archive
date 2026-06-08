@@ -1,0 +1,10 @@
+CREATE TABLE `student` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT,
+`name` TEXT,
+`course_id` INTEGER
+);
+
+CREATE TABLE `courses` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT,
+`name` TEXT
+);

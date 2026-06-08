@@ -1,0 +1,22 @@
+@media (max-width: 526px) { 
+    .btn-margin-top {
+        margin-top: 2%;
+    }
+ }
+
+.jumbotron {
+    background-image: url(img/paz-arando-bz-DE-AF0lM-unsplash.jpg);
+    height: 89vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+#hero-heading {
+    margin-top: 25vh;
+}
+
+ion-icon {
+    font-size: 128px;
+  }

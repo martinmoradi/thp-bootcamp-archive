@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+  <head>
+    <title>Medium Clone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <nav class="navbar is-warning is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class ="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="<%= root_path %>">
+            <%= image_tag("logo.png", alt: "logo", :size => '162x28') %>
+          </a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+          </div>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a class="navbar-item navbar-links">
+              Our Story
+            </a>
+            <a class="navbar-item navbar-links">
+              Membership
+            </a>
+            <a class="navbar-item navbar-links">
+              Write
+            </a>
+            <a class="navbar-item noHover" href='<% login_path %>'>
+              Sign In
+            </a>
+            <div class="buttons">
+              <a class="button is-dark" href='<% signup_path %>'>
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <%= yield %>
+</body>
+</html>

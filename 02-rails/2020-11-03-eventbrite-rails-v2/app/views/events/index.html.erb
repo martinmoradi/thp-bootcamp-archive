@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="jumbotron flex-column">
+    <div class="text-hero align-items-center">
+    <h1 class="mt-5 lead-text text-center">EVENTBRITE</h1>
+    <p class="lead ml-5"></p>
+    <hr class="my-4 ml-5">
+    <p class="text-center headline"><strong>Discover amazing events near you</p></strong>
+    <p class="lead mt-5 d-flex text-center">
+      <a class="btn btn-info btn-lg primary-btn" href="<%= new_event_path %>" role="button">Get started</a>
+    </p>
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="container">
+<% @events.each do |event| %>
+  <div class="row">
+    <div class="col-lg-6 flex"><br>
+      <h2 class="text-center"><strong><em> <%= event.title %> <i class="fab fa-angellist"></i></em></strong></h2>
+       <% if event.description.to_s.length > 80 %> 
+        <p class="card-text"> <%= event.description.to_s[0..80] + ' [...]' %> </p>
+      <% else %>
+        <p class="card-text"> <%= event.description.to_s[0..80] %> </p>
+      <% end %>
+      <ul>
+        <strong><%= event.start_date.strftime("%Y-%m-%d") %></strong><br>
+        <a><%= event.attendances.count %> attendees <a><br>
+        <a>From <%= event.price %> €<a><br><br>
+      </ul>
+      <p> <strong><%= event.location %></p></strong>
+      <a class="btn btn-info mx-auto" href="<%= event_path(event.id) %>">See more</a>
+      
+    </div>
+    <div class="col-lg-6">
+        <img class="card-img" src="https://picsum.photos/id/<%= rand(1..99) %>/300/200" alt="Card image cap">
+    </div>
+  </div><hr>
+<%end%>
+</div>

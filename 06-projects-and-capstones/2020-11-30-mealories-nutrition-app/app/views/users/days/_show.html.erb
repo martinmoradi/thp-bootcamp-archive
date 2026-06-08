@@ -1,0 +1,105 @@
+<% unless @day.nil? %>
+
+<div class="flex justify-items-center flex-wrap gap-x-5	">
+
+  <div class="container mx-auto max-w-sm rounded-xl overflow-hidden shadow-xl my-2 bg-gray-100">
+    <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+      <div
+        class="absolute top-0 z-99 left-0 rounded-xl h-8 bg-primary-500 w-32 text-white text-center box-shadow-custom ">
+        <p class="text-xs font-semibold inline-block px-2 mt-2 uppercase last:mr-0">Ton déjeuner</p>
+      </div>
+      <%= image_tag @day.lunch.image_url %>
+    </div>
+    <div class="relative flex justify-between items-center flex-row px-6 z-50 -mt-10">
+      <p class="flex items-center text-gray-600 text-sm -ml-2 mt-12 sm:mt-0"><span class="text-gray-600 mr-2"><i
+            class="fas fa-utensils ml-3"></i></span><span
+          class="text-lg text-primary-600 font-semibold mr-1"><%= @day.lunch.cal_per_serving.round(0)%></span><span
+          class="text-sm text-gray-500 ">calories par portion</span></p>
+
+      <%= link_to recipe_path(@day.lunch) do %>
+      <button
+        class="p-4 bg-primary-500 rounded-full hover:bg-primary-700 nice-btns focus:bg-primary-800 transition ease-in duration-200 focus:outline-none">
+        <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6">
+          <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
+                                C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
+                                C15.952,9,16,9.447,16,10z" />
+        </svg>
+      </button>
+      <% end %>
+
+    </div>
+    <div class="pt-6 pb-8 text-gray-600 text-center text-2xl text-semibold">
+      <p> <%=@day.lunch.title %></p>
+    </div>
+    <div class="pb-10 uppercase text-center tracking-wide flex justify-around">
+      <div class="prots">
+        <p class="text-gray-500 text-sm">Protéines</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.lunch.prot_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+      <div class="carbs">
+        <p class="text-gray-500 text-sm">Glucides</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.lunch.carbs_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+      <div class="fat">
+        <p class="text-gray-500 text-sm">Lipides</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.lunch.fat_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container mx-auto max-w-sm rounded-xl overflow-hidden shadow-xl my-2 bg-gray-100">
+    <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+      <div
+        class="absolute top-0 z-99 left-0 rounded-xl h-8 bg-primary-500 w-32 text-white text-center box-shadow-custom">
+        <p class="text-xs font-semibold inline-block px-2 mt-2 uppercase last:mr-0">Ton dîner</p>
+      </div>
+      <%= image_tag @day.dinner.image_url %>
+    </div>
+    <div class="relative flex justify-between items-center flex-row px-6 z-50 -mt-10">
+      <p class="flex items-center text-gray-600 text-sm -ml-2"><span class="text-gray-600 mr-2"><i
+            class="fas fa-utensils ml-3"></i></span><span
+          class="text-lg text-primary-600 font-semibold mr-1"><%= @day.dinner.cal_per_serving.round(0)%></span><span
+          class="text-sm text-gray-500">calories par portion</span></p>
+
+      <%= link_to recipe_path(@day.dinner) do %>
+      <button
+        class="p-4 bg-primary-500 rounded-full hover:bg-primary-700 nice-btns focus:bg-primary-800 transition ease-in duration-200 focus:outline-none">
+        <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6">
+          <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
+                                C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
+                                C15.952,9,16,9.447,16,10z" />
+        </svg>
+      </button>
+      <% end %>
+
+    </div>
+    <div class="pt-6 pb-8 text-gray-600 text-center text-2xl text-semibold">
+      <p> <%=@day.dinner.title %></p>
+    </div>
+    <div class="pb-10 uppercase text-center tracking-wide flex justify-around">
+      <div class="prots">
+        <p class="text-gray-500 text-sm">Protéines</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.dinner.prot_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+      <div class="carbs">
+        <p class="text-gray-500 text-sm">Glucides</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.dinner.carbs_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+      <div class="fat">
+        <p class="text-gray-500 text-sm">Lipides</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.dinner.fat_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+
+</div>

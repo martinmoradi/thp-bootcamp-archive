@@ -1,0 +1,17 @@
+CREATE TABLE `users` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT,
+`name` TEXT
+);
+
+CREATE TABLE `pins` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT,
+`user_id` INTEGER,
+`img_url` TEXT
+);
+
+CREATE TABLE `comments` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT,
+`user_id` INTEGER,
+`pins_id` INTEGER,
+`body` TEXT
+);

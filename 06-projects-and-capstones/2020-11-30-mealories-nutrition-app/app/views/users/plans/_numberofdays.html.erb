@@ -1,0 +1,12 @@
+<!--card organization-->
+
+<div class="days flex items-center justify-center ">
+  <!-- day cards start -->
+  <div class="flex mt-3 ">
+    <% @plan.days.each.with_index do |day, idx| %>
+    <%= render "users/days/days",day: day, idx: idx %>
+    <% end %>
+  </div>
+  <!-- day cards end  -->
+
+</div>

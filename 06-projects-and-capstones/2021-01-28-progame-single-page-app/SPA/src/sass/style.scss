@@ -1,0 +1,354 @@
+// SASS VARIABLES
+@import "reset.css";
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap");
+
+$color-red: #d20a32;
+$color-dark_grey: #191919;
+$text-m: 16px;
+$text-sm: 12px;
+$text-l: 18px;
+$text-xl: 24px;
+$text-xxl: 48px;
+
+@mixin subtitles {
+  margin: 2rem 0 1.5rem 0;
+  font-size: 36px;
+  color: $color-red;
+  font-weight: bold;
+}
+
+body {
+  background-color: $color-dark_grey;
+  color: white;
+  font-family: "Lato", sans-serif;
+
+  .hidden {
+    display: none;
+  }
+
+  .main__details {
+    min-height: calc(100vh - 50px);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active,
+  a:focus {
+    color: white;
+    text-decoration: none;
+    outline: 0;
+  }
+
+  .link,
+  .link:visited {
+    position: relative;
+
+    &:after {
+      content: "";
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      background: $color-red;
+      transition: 0.2s;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+
+    &.block {
+      display: block;
+      padding: 0.5em;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+
+  .wrapper {
+    width: 1024px;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    .game_description {
+      p {
+        margin: 1rem 0 1rem 0;
+      }
+    }
+
+    .game-title__row {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+
+      .game-title {
+        font-size: $text-xxl;
+        font-weight: bold;
+      }
+
+      .game-ratings {
+        font-size: $text-xl;
+        color: $color-red;
+        font-weight: bold;
+        align-self: center;
+      }
+    }
+    .game_description {
+      line-height: 1.2;
+
+      h3 {
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+    }
+
+    .game-details {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2rem 0px;
+      grid-template-areas:
+        "game_release-date game_developers game_platforms game_publishers"
+        "game_genres game_genres game_tags game_tags";
+      .game_release-date {
+        grid-area: game_release-date;
+      }
+      .game_developers {
+        grid-area: game_developers;
+      }
+      .game_platforms {
+        grid-area: game_platforms;
+      }
+      .game_publishers {
+        grid-area: game_publishers;
+      }
+      .game_genres {
+        grid-area: game_genres;
+      }
+      .game_tags {
+        grid-area: game_tags;
+      }
+
+      h3 {
+        font-weight: bold;
+        margin-bottom: -0.5rem;
+      }
+    }
+
+    header {
+      margin-top: 2rem;
+
+      .header--navigation {
+        display: flex;
+        margin-bottom: 2rem;
+        justify-content: space-between;
+
+        .header--title {
+          font-size: $text-xxl;
+          font-weight: bold;
+          color: $color-red;
+          letter-spacing: 1px;
+        }
+
+        .header--searchbar {
+          align-self: center;
+          display: flex;
+          border: 1px solid #d8d8d8;
+          border-radius: 50px;
+          padding: 0 80px;
+          align-self: center;
+          margin-top: 10px;
+          cursor: pointer;
+
+          .searchIcon {
+            padding: 0.5rem;
+            color: #d8d8d8;
+            margin: 2px 0 0 -60px;
+          }
+
+          input {
+            background-color: transparent;
+            padding: 0 50px 0 0;
+            outline: none;
+            min-width: 100%;
+            border: 0;
+            font-size: $text-m;
+            box-shadow: none;
+            color: white;
+          }
+
+          input::placeholder {
+            margin-left: -30px;
+          }
+        }
+      }
+
+      .header--select__wrapper {
+        max-width: 260px;
+        margin-bottom: 1.5rem;
+      }
+
+      .header--select__box {
+        background-color: $color-red;
+        width: 100%;
+        color: white;
+        letter-spacing: 1.2px;
+        padding: 10px 20px;
+        font-size: $text-xl;
+        font-weight: thin;
+        line-height: 1.75;
+      }
+
+      h1 {
+        font-size: $text-xxl;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        line-height: 1.5em;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px 24px;
+
+      .game__card {
+        .game__card--title {
+          font-weight: bold;
+          letter-spacing: 1px;
+          font-size: 24px;
+        }
+
+        .game__card--image {
+          margin-bottom: 10px;
+          min-width: 100%;
+          max-width: 100%;
+          height: 193px;
+          object-fit: cover;
+          cursor: pointer;
+        }
+
+        .game__card--icons {
+          margin-top: 0.7rem;
+        }
+
+        .platform__icon {
+          height: 1.4em;
+          margin: 0 10px 0 0;
+        }
+
+        .game__card--details {
+          margin-bottom: 10px;
+          height: 193px;
+          overflow: hidden;
+        }
+
+        h3 {
+          font-size: $text-l;
+          margin-bottom: 1.2rem;
+        }
+
+        p {
+          font-size: $text-sm;
+        }
+      }
+    }
+  }
+
+  .main__showmore {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .main__showmore--button {
+    background-color: $color-red;
+    height: 51px;
+    width: 223px;
+    color: white;
+    font-weight: bold;
+    font-size: $text-xl;
+  }
+
+  .footer__main {
+    height: 50px;
+    margin: 3rem 0 2rem 0;
+    font-weight: bold;
+    padding-bottom: 20px;
+
+    .footer__redbar {
+      width: 139px;
+      height: 10px;
+      background-color: $color-red;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .hero--banner__image {
+    min-width: 100%;
+    height: 419px;
+    position: relative;
+    margin-top: 2rem;
+    background-position: center;
+  }
+
+  .hero--banner__button {
+    background-color: $color-red;
+    width: 228px;
+    height: 50px;
+    color: white;
+    letter-spacing: 1.2px;
+    font-size: $text-m;
+    font-weight: bold;
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+  }
+
+  .game_stores {
+    a {
+      margin-bottom: 50px;
+      .store__icon {
+        height: 1.4em;
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  .game__details--subtitles {
+    @include subtitles();
+  }
+
+  .game_screenshots--grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    gap: 20px 20px;
+    
+      .game__screenshot {
+        height: 248px;
+        width: calc(1024px / 2 - 10px);
+        object-fit: fill;
+      }
+  }
+}

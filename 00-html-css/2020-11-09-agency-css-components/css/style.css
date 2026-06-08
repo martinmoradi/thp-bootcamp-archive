@@ -1,0 +1,489 @@
+/*       Table of Content      */
+/*       1 - Generics          */
+/*       2 - Colors            */
+/*       3 - Typographies      */
+/*       4 - Buttons           */
+/*       5 - Layout            */
+
+/*******************************/
+/*       1 - GENERICS          */
+/*******************************/
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 1em;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
+
+/*******************************/
+/*       2 - COLORS            */
+/*******************************/
+
+/*    a - BACKGROUND-COLORS    */
+
+body {
+  background-color: #f0f2f5;
+}
+
+.primary {
+  background-color: #58c9b9;
+}
+
+.secondary {
+  background-color: #519d9e;
+}
+
+.tertiary {
+  background-color: #d1b6e1;
+}
+
+.dark {
+  background-color: #2f3542;
+}
+
+.medium-light {
+  background-color: #747d8c;
+}
+
+.light {
+  background-color: #a4b0be;
+}
+
+.warning {
+  background-color: #ff4757;
+}
+
+.danger {
+  background-color: #ffa502;
+}
+
+.success {
+  background-color: #2ed573;
+}
+
+.info {
+  background-color: #3742fa;
+}
+
+/*    b -  TEXT-COLORS      */
+
+.text-primary {
+  color: #1e90ff;
+}
+
+.text-secondary {
+  color: #eccc68;
+}
+
+.text-dark {
+  color: #2f3542;
+}
+
+.text-medium-light {
+  color: #747d8c;
+}
+
+.text-light {
+  color: #a4b0be;
+}
+
+.text-warning {
+  color: #ff4757;
+}
+
+.text-danger {
+  color: #ffa502;
+}
+
+.text-success {
+  color: #2ed573;
+}
+
+.text-info {
+  color: #3742fa;
+}
+
+/*******************************/
+/*       2 - TYPOGRAPHIES      */
+/*******************************/
+
+/*        a -  FONTS           */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 16px;
+  text-align: center;
+}
+
+strong {
+  font-weight: 500;
+}
+
+em {
+  font-style: italic;
+}
+
+h1 {
+  font: 700 48px/1.2 "Poppins", sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font: 700 32px/1.2 "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font: 700 24px/1.2 "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font: 700 20px/1.2 "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font: 500 18px/1.2 "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+h6 {
+  font: 500 16px/1.2 "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+
+/* Blockquote imported from CSS Tricks */
+blockquote {
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+  letter-spacing: 0.2px;
+  font: 400 16px/1.2 "Poppins", sans-serif;
+}
+
+/*******************************/
+/*       3 - BUTTONS           */
+/*******************************/
+
+a.btn,
+input.btn,
+button,
+.btn {
+  outline: none;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  font: 500 18px/1 "Poppins", sans-serif;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 10px;
+  width: 140px;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  position: relative;
+  color: #fff;
+}
+
+a.btn:hover,
+input.btn:hover,
+button:hover,
+.btn:hover {
+  top: -3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+a.btn-outlined,
+input.btn-outlined,
+button.btn-outlined,
+.btn-outlined {
+  color: black;
+  background-color: #f0f2f5;
+  padding: 18px;
+}
+
+a.btn-outlined.primary,
+input.btn-outlined.primary,
+button.btn-outlined.primary,
+.btn-outlined.primary {
+  border: 2px solid #58c9b9;
+  color: #58c9b9;
+}
+a.btn-outlined.primary:hover,
+input.btn-outlined.primary:hover,
+button.btn-outlined.primary:hover,
+.btn-outlined.primary:hover {
+  background-color: #58c9b9;
+  color: white;
+}
+
+a.btn-outlined.warning,
+input.btn-outlined.warning,
+button.btn-outlined.warning,
+.btn-outlined.warning {
+  border: 2px solid #ff4757;
+  color: #ff4757;
+}
+a.btn-outlined.warning:hover,
+input.btn-outlined.warning:hover,
+button.btn-outlined.warning:hover,
+.btn-outlined.warning:hover {
+  background-color: #ff4757;
+  color: white;
+}
+
+a.btn-outlined.danger,
+input.btn-outlined.danger,
+button.btn-outlined.danger,
+.btn-outlined.danger {
+  border: 2px solid #ffa502;
+  color: #ffa502;
+}
+a.btn-outlined.danger:hover,
+input.btn-outlined.danger:hover,
+button.btn-outlined.danger:hover,
+.btn-outlined.danger:hover {
+  background-color: #ffa502;
+  color: white;
+}
+
+a.btn-outlined.info,
+input.btn-outlined.info,
+button.btn-outlined.info,
+.btn-outlined.info {
+  border: 2px solid #3742fa;
+  color: #3742fa;
+}
+a.btn-outlined.info:hover,
+input.btn-outlined.info:hover,
+button.btn-outlined.info:hover,
+.btn-outlined.info:hover {
+  background-color: #3742fa;
+  color: white;
+}
+
+a.btn-outlined.success,
+input.btn-outlined.success,
+button.btn-outlined.success,
+.btn-outlined.success {
+  border: 2px solid #2ed573;
+  color: #2ed573;
+}
+a.btn-outlined.success:hover,
+input.btn-outlined.success:hover,
+button.btn-outlined.success:hover,
+.btn-outlined.success:hover {
+  background-color: #2ed573;
+  color: white;
+}
+
+a.btn.btn-lg {
+  width: 200px;
+}
+
+a.btn.btn-sm {
+  width: 100px;
+  padding: 10px;
+}
+
+/*******************************/
+/*       4 - LAYOUT            */
+/*******************************/
+
+.main-content {
+  max-width: 1024px;
+  margin: 3em auto 0;
+}
+
+.palette {
+  background: #fff;
+  justify-content: space-around;
+  border-radius: 20px;
+  margin: 1rem auto;
+  width: 19%;
+}
+
+.palette:hover {
+  top: -5px;
+  box-shadow: 0px 5px 20px rgba(gray, 0.15);
+}
+
+.palette-color {
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(gray, 0.1);
+}
+
+.palete-color__content {
+  padding: 10px 10px 30px 10px;
+  color: #a9abab;
+}
+
+.palette-color__name {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #444545;
+}
+
+.palette-color__code {
+  font-size: 11px;
+  line-height: 0.8em;
+  text-transform: uppercase;
+}
+
+.list-palette {
+  width: 340px;
+  margin: 0 20px;
+}
+
+.row-flex {
+  display: flex;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+.text {
+  text-align: justify;
+}
+
+.buttons__full,
+.buttons__outlined,
+.buttons__large,
+.buttons__small {
+  margin: 2rem 0;
+}
+
+.buttons > a {
+  margin: 0 10px;
+}
+
+.icon {
+  justify-content: space-around;
+  margin: 1rem auto;
+  width: 19%;
+}
+/*******************************/
+/*       5- FORM               */
+/*******************************/
+
+.signup-form {
+  width: 480px;
+  padding: 8% 0 1rem;
+  margin: 1rem auto 4rem;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #58c9b9,
+    #519d9e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #58c9b9,
+    #519d9e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.text-control {
+  border: none;
+  border-bottom: solid 1px #58c9b9;
+  width: 80%;
+  background: none;
+  height: 30px;
+  margin: 1em auto;
+  text-indent: 10px;
+  display: inline-block;
+  vertical-align: top;
+  outline: none;
+  color: #fff;
+}
+
+.text-control::placeholder,
+.form-element-field::placeholder {
+  color: #ccc;
+  transform-origin: left top;
+  text-align: center;
+}
+
+.row-form {
+  display: flex;
+}
+
+.radios,
+.checkboxes {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1em auto 2em;
+}
+
+.radio-custom-label,
+.checkbox-custom-label,
+.textarea-custom-label {
+  margin-left: -60px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5);
+  padding: 10px;
+  background-color: #2ed573;
+}
+
+textarea {
+  background: none;
+  outline: none;
+  display: block;
+  height: 60px;
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid #ccc;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+}
