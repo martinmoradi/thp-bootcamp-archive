@@ -13,7 +13,7 @@ Tracked `.env`, Rails credential files, dependency directories, caches, and `.DS
 - `02-rails`: 16 repos
 - `03-javascript`: 10 repos
 - `04-react-typescript`: 7 repos
-- `06-projects-and-capstones`: 7 repos
+- `06-projects-and-capstones`: 8 repos
 
 ## Notes
 
